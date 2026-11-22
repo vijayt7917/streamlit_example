@@ -4,11 +4,8 @@ FROM python:3.9-slim
 # Set the working directory
 WORKDIR /app
 
-# Copy requirements file first to leverage Docker cache
-COPY requirements.txt .
-
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Streamlit directly
+RUN pip install --no-cache-dir streamlit
 
 # Copy the rest of the application code
 COPY . .
