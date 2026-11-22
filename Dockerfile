@@ -13,5 +13,8 @@ COPY . .
 # Expose Streamlit's default port
 EXPOSE 8080
 
+# Change this line in your Dockerfile:
+CMD ["streamlit", "run", "calculator.py", "--server.port=8080", "--server.address=0.0.0.0"]
+
 # Configure Streamlit to run on port 8080 and listen on all interfaces
-CMD ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0"]
+# CMD ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0"]
